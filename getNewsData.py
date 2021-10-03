@@ -1,12 +1,12 @@
 import requests
 import json
+import config
 
-key = "4a941fc7bd21429ab3cd7a2033d48cef"
 language = "en"
 query = "covid"
 startDate = "2021-10-01"
 sortBy = "relevancy" # can be: popularity, publishedAt, relevancy
-searchUrl = f"https://newsapi.org/v2/everything?q={query}&from={startDate}&sortBy={sortBy}&apiKey={key}&language={language}"
+searchUrl = f"https://newsapi.org/v2/everything?q={query}&from={startDate}&sortBy={sortBy}&apiKey={config.newsKey}&language={language}"
 
 country = "gb"
 #searchUrl = f"https://newsapi.org/v2/top-headlines?country={country}&q={query}&apiKey={key}"

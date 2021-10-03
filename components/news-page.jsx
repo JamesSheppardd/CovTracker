@@ -46,15 +46,18 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 30,
         fontWeight: "bold",
+        fontFamily: "Futura"
 
     },
     byLine: {
         fontSize: 10,
         fontWeight: "200",
-        color: "#434343"
+        color: "#434343",
+        fontFamily: "Futura"
     },
     content: {
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "Futura"
     }
 })
 

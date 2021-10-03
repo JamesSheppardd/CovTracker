@@ -1,0 +1,31 @@
+{
+    "sites":
+    [
+        {
+            "latitude":51.460910,
+            "longitude":-0.109460,
+            "title": "Covid-19 Walk-through Testing Site - Brixton (Angela Davis Industrial Estate)"
+        },
+        {
+            "latitude":51.473950,
+            "longitude":-0.026370,
+            "title": "Covid-19 Walk-through Testing Site - Lewisham (Vanguard Street Car Park)"
+        },
+        {
+            "latitude":51.419770,
+            "longitude":-0.071820,
+            "title": "Covid-19 Walk-through Testing Site - Bromley (Crystal Palace Park Car Park - Canada Gates)"
+        },
+        {
+            "latitude":51.493420,
+            "longitude":-0.132120,
+            "title": "Covid-19 Walk-through Testing Site - Westminster (Grosvenor Hall)"
+        },
+        {
+            "latitude":51.500150,
+            "longitude":-0.010210,
+            "title": "Covid-19 Walk-through Testing Site - Tower Hamlets (Jack Dash House)"
+        }
+        
+    ]
+}

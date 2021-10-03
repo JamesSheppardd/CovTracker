@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableHighlight, StyleSheet, Dimensions } from "react-native";
+import { View, Text, TouchableHighlight, StyleSheet, Dimensions, Image } from "react-native";
 import { openNews } from "./button-funcs";
 import Colours from "../assets/colours.js";
 import gbNewsFile from "../assets/data/gbNews.json";
@@ -14,10 +14,11 @@ const RoundedRiskButton = (props) => {
              onPress={() => props.navigation.navigate("Risk", {
                  cases: 123456678
              })}
-             style={roundButtonStyles.touchable}
+             style={roundButtonStyles.touchableRisk}
             >
-                <Text style={roundButtonStyles.text}>{props.risk} risk of contracting COVID-19 in your area</Text>
+                <Text style={roundButtonStyles.textRisk}>{props.risk} risk of contracting COVID-19 in your area</Text>
             </TouchableHighlight>
+                <Text style={roundButtonStyles.textRiskClick}>Click to read more</Text>
         </View>
     )
 }
@@ -27,16 +28,20 @@ const RoundedNewsButton = (props) => {
 
     return (
         <View style={roundButtonStyles.newsButton}>
+        <Image 
+            source={{uri: newsFile.articles[props.value].urlToImage}}
+            style={{width: Dimensions.get("window").width - 0.1 * 6 * Dimensions.get("window").width, height: 100, borderTopLeftRadius:20, borderTopRightRadius:20}}
+        />
             <TouchableHighlight 
              activeOpacity={0.6}
-             underlayColor={Colours.lYellow}
+             underlayColor={Colours.lGreen}
              onPress={() => props.navigation.navigate("News", {
                  value: props.value,
                  area: props.area
              })}
              style={roundButtonStyles.touchable}
             >
-                <Text style={roundButtonStyles.text}>{newsFile.articles[props.value].title}</Text>
+            <Text style={roundButtonStyles.text}>{newsFile.articles[props.value].title}</Text>
             </TouchableHighlight>
         </View>
     )
@@ -56,7 +61,7 @@ const roundButtonStyles = StyleSheet.create({
     },
     newsButton: {
         flex:1,
-        backgroundColor: Colours.yellow,
+        backgroundColor: Colours.green,
         borderRadius: 20,
         marginTop:5,
         justifyContent:"center",
@@ -64,12 +69,36 @@ const roundButtonStyles = StyleSheet.create({
         width:Dimensions.get("window").width - 0.1 * 6 * Dimensions.get("window").width,
     },
     text: {
-        textAlign: "center"
+        textAlign: "center",
+        fontFamily: "Futura"
     },
+    textRisk: {
+        textAlign: "center",
+        fontFamily: "Futura",
+        color: "white",
+        fontSize: 20,
+        marginTop: 15,
+        marginHorizontal: 15
+    },
+    textRiskClick: {
+        textAlign: "center",
+        fontFamily: "Futura",
+        color: Colours.lOrange,
+        fontSize: 20,
+        marginTop: 15,
+        marginHorizontal: 15
+    },
+    
     touchable: {
         flex: 1,
-        borderRadius: 20,
-    }
+        borderBottomLeftRadius: 20,
+        borderBottomRightRadius: 20,
+    },
+    touchableRisk: {
+        flex: 1,
+        borderRadius: 20
+    },
+    
 })
 
 export { RoundedRiskButton, RoundedNewsButton };

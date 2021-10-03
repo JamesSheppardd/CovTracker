@@ -10,7 +10,7 @@ const LandingPage = (props) => {
         <ScrollView style={{backgroundColor:"white"}}>
             <RoundedRiskButton risk="High" navigation={props.navigation}/>
 
-            <Text>Updates from England</Text>
+            <Text style={styles.text}>Updates from England</Text>
             <Divider lPad={5}/>
 
             <ScrollView horizontal={true}>
@@ -21,7 +21,7 @@ const LandingPage = (props) => {
                 </View>
             </ScrollView>
 
-            <Text>Latest from around the world</Text>
+            <Text style={styles.text}>Latest from around the world</Text>
             <Divider lPad={5}/>
 
             <ScrollView horizontal={true}>
@@ -46,9 +46,11 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         justifyContent: "center",
         paddingTop: "5%",
+        fontFamily: "Futura"
     },
     text: {
-        fontSize: 20
+        fontSize: 20,
+        fontFamily: "Futura"
     }
 });
 
